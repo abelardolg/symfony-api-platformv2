@@ -23,9 +23,9 @@ services:
       args:
         UID: $U_ID
     environment:
-      PHP_IDE_CONFIG: serverName=Docker
-      PHP_XDEBUG_ENABLED: 1
-      XDEBUG_CONFIG:  remote_host=172.17.0.1  remote_port=9005
+        XDEBUG_CLIENT_HOST: 172.24.64.1
+        XDEBUG_CLIENT_PORT: 9003
+        PHP_IDE_CONFIG: serverName=Docker
     volumes:
       - ./:/appdata/www
       - ./docker/php/xdebug.ini:/usr/local/etc/php/conf.d/xdebug.ini
